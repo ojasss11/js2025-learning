@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-2</title>
+    <link
+      rel="shortcut icon"
+      href="https://w7.pngwing.com/pngs/718/69/png-transparent-scalable-graphics-javascript-encapsulated-postscript-javascript-logo-text-logo-number-thumbnail.png"
+      type="image/x-icon"
+    />
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, #a5f3fc, #0e7490);
+        font-family: Arial, sans-serif;
+      }
+
+      /* Main Title */
+      h1 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-align: center;
+        margin-top: 2rem;
+        color: white;
+      }
+
+      /* Button Styling */
+      button {
+        padding: 15px 25px;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #2563eb;
+      }
+
+      /* Red Text Style */
+      .makeitRed {
+        color: red;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      /* Card Styling */
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin: 2rem auto;
+        width: 80%;
+        max-width: 350px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .card h2 {
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Features Section */
+      #info {
+        margin: 2rem auto;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      #info h2 {
+        color: #333;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      #info ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #info li {
+        font-size: 1.1rem;
+        color: #555;
+        margin: 0.5rem 0;
+        text-align: left;
+        line-height: 1.5;
+      }
+
+      /* Feedback Form Styling */
+      #feedback form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      #feedback label {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      #feedback input,
+      #feedback textarea {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      #feedback textarea {
+        resize: vertical;
+      }
+
+      #feedback button {
+        padding: 12px 20px;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+      }
+
+      #feedback button:hover {
+        background-color: #2563eb;
+      }
+
+      /* Footer Styling */
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #fef08a, #ca8a04);
+        color: #ecfeff;
+        font-size: 1rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer p {
+        margin: 0.5rem 0;
+      }
+
+      footer a {
+        color: #ecfeff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #ecfeff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="hone">Hey, Welcome to the DOM Manipulation Tutorial!</h1>
+      <button id="first-button">Click Here</button>
+    </header>
+
+    <div id="main">
+      <!-- New Card Section -->
+      <div id="content" class="card">
+        <h2>About DOM</h2>
+        <p>
+          The Document Object Model (DOM) represents the structure of an HTML
+          document.
+        </p>
+        <p>
+          You can interact with the DOM using JavaScript to change the content,
+          structure, and styles of a web page.
+        </p>
+      </div>
+
+      <!-- New Section with List -->
+      <section id="info">
+        <h2>Features of DOM</h2>
+        <ul>
+          <li>Represents the document as a tree structure</li>
+          <li>Allows dynamic changes to the page content</li>
+          <li>Enables event-driven programming</li>
+          <li>Can manipulate HTML elements</li>
+          <li>Supports CSS changes via JavaScript</li>
+        </ul>
+      </section>
+
+      <!-- New Form Section -->
+      <section id="feedback">
+        <h2>Feedback Form</h2>
+        <form action="#" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br />
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="4" required></textarea
+          ><br />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <!-- Footer Section -->
+      <footer>
+        <p>
+          &copy; 2025 JavaScript Intermediate Stuff by Ojas. Dive deeper into
+          coding!
+        </p>
+        <p>
+          Follow us:
+          <a href="https://github.com/ojasss11" target="_blank">GitHub</a> |
+          <a href="https://www.instagram.com/ojasss11/" target="_blank"
+            >Instagram</a
+          >
+          |
+          <a
+            href="https://www.linkedin.com/in/ojas-bidkar-17ba8927b/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

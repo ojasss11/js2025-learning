@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #67e8f9, #0e7490);
+        margin: 20px;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #052e16;
+        color: #f0fdf4;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      button {
+        background-color: #052e16;
+        color: #f0fdf4;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        margin-left: 5px;
+      }
+
+      button:hover {
+        background-color: #15803d;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      h2.abcd {
+        font-style: italic;
+        color: #0073e6;
+      }
+
+      h2#abcd {
+        font-weight: bold;
+        color: #ff5733;
+      }
+
+      h3 {
+        color: #555;
+      }
+
+      h3#first {
+        font-size: 18px;
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+        height: 25em;
+        border-radius: 10px;
+        margin: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      img#calender {
+        border: 2px solid #0073e6;
+      }
+
+      .secondimg {
+        color: #6a1b9a;
+        font-weight: bold;
+      }
+
+      .peacock {
+        border: 3px dashed #ff5733;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #082f49, #38bdf8);
+        color: #ecfeff;
+        font-size: 1rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer p {
+        margin: 0.5rem 0;
+      }
+
+      footer a {
+        color: #ecfeff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+        color: #ecfeff;
+      }
+
+      .section-container {
+        margin: 30px 0;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+        padding: 20px;
+      }
+
+      .card h4 {
+        color: #333;
+      }
+
+      .card p {
+        color: #555;
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to DOM Interaction</h1>
+      <nav>
+        <a href="#section1" style="color: #fff; margin: 0 10px">Section 1</a>
+        <a href="#section2" style="color: #fff; margin: 0 10px">Section 2</a>
+        <a href="#footer" style="color: #fff; margin: 0 10px">Footer</a>
+      </nav>
+    </header>
+
+    <div class="section-container" id="section1">
+      <h2 class="abcd">Interactive Section 1</h2>
+      <p>This section demonstrates interactive elements on the page.</p>
+      <button id="btn1">Click me</button>
+      <p id="message1"></p>
+    </div>
+
+    <div class="section-container" id="section2">
+      <h2 id="abcd">Interactive Section 2</h2>
+      <div class="card">
+        <h4>Card Title</h4>
+        <p>
+          Here is some content in a card element. You can style it however you
+          want.
+        </p>
+        <button id="btn2">Click to Show Card Info</button>
+        <p id="card-info" style="display: none">
+          This is additional information shown after clicking the button.
+        </p>
+      </div>
+    </div>
+
+    <h3 id="firsth3">First Image</h3>
+    <img
+      src="https://plus.unsplash.com/premium_photo-1731948132439-29777fe3be46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="calender"
+      id="calender"
+    />
+
+    <h3 class="secondimg">Second Image</h3>
+    <img
+      class="peacock"
+      src="https://images.unsplash.com/photo-1735831435060-845f03ad57c2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="peacock"
+    />
+
+    <button id="hideImage">Hide First Image</button>
+
+    <footer id="footer">
+      <p>
+        &copy; 2025 JavaScript Intermediate Stuff by Ojas. Dive deeper into
+        coding!
+      </p>
+      <p>
+        Follow us:
+        <a href="https://github.com/ojasss11" target="_blank">GitHub</a> |
+        <a href="https://www.instagram.com/ojasss11/" target="_blank"
+          >Instagram</a
+        >
+        |
+        <a
+          href="https://www.linkedin.com/in/ojas-bidkar-17ba8927b/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
